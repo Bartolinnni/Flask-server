@@ -8,7 +8,7 @@
   /* The image used */
   /* Set a specific height */
   margin-top: 500px;
-  background-image: url_for('static', filename='foty/owl.jpg') ;
+  background-image: url("{{ url_for('static', filename='foty/owl.jpg') }}");
   min-height: 800px; 
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
