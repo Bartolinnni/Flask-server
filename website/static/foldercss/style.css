@@ -1,0 +1,130 @@
+body
+{
+    font-family:'Courier New', Courier, monospace;
+}
+a:link,a:visited
+{
+    font-family:'Courier New', Courier, monospace;
+    color: black;
+    text-decoration: none;
+    /* padding: 10px;
+    border: solid white 5px;
+    border-radius: 10px; */
+}
+a:hover
+{
+    font-weight:800;
+}
+.menu
+{
+    text-align: center;
+    margin-top: 0px;
+    font-size: large;
+    /* font-weight: 15px; */
+    padding: 20px;
+    border: solid 2px black;
+    border-radius: 35px;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+#welcomemess
+{
+    font-size:x-large;
+}
+#welcomemess:hover
+{
+    font-weight: bolder;
+}
+#firstpar
+{
+    margin-top: 175px;
+    text-align: center;
+}
+#whiteboard
+{
+    height: 1000px;
+}
+.conteiner
+{
+    /* border-top: 3px solid black;
+    border-bottom: 3px solid black; */
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    /* text-align: center; */
+}
+#logo
+{
+    mix-blend-mode: multiply;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    opacity: 80%;
+  }
+#logo:hover
+{
+    opacity: 120%;
+}
+#logowaniediv
+{
+    text-align: right;
+}
+#registerdiv
+{
+    text-align: right;
+}
+#footer
+{
+    margin-top: 30px;
+    border-top: solid black 3px;
+    background-color: white;
+    height: 100px;
+    text-align: center;
+}
+#loginekran
+{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 200px;
+    margin-top: 0px;
+    text-align: center;
+    border: solid black 3px;
+    border-radius: 80px;
+    width: 300px;
+}
+#aemond
+{
+    float: left;
+    margin-right: 15px;
+    height: 700px;
+    width: 500px;
+}
+.error
+{
+    width: 200px;
+}
+#button
+{
+    margin-top: 15px;
+    width: 200px;
+    padding: 15px;
+    border-radius: 15px;
+    border: 2px solid black;
+    color: black;
+    background-color:gray;
+}
+#button::after
+{
+    width: 110px;
+}
+.inpt
+{
+    border-radius: 10px;
+    padding: 5px;
+}

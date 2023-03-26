@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" type="text/css" href="{{ url_for('static', filename='foldercss/style.css') }}" />
+<style>
+.image {
+  /* The image used */
+  /* Set a specific height */
+  margin-top: 500px;
+  background-image: url_for('static', filename='foty/owl.jpg') ;
+  min-height: 800px; 
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+</style>
+
+<script src="{{ url_for('static', filename='jquery-3.6.4.min.js') }}" type = "text/javascript"></script>
+
+<script type = "text/javascript">
+
+  var numer = 0;
+  
+  function schowaj()
+  {
+    $("#slider").fadeOut(500);
+  }
+
+  function zmienslajd()
+  {
+    numer++;
+    if(numer >2) numer = 1;
+    if(numer == 2){
+      var plik = '<image src="{{ url_for("static", filename = "foty/targ2.jpg") }}" alt="" id = "aemond">'
+    }
+    else if(numer == 1)
+    {
+      plik = '<image src="{{ url_for("static", filename = "foty/targ1.jpg") }}" alt="" id = "aemond">'      
+    }
+    document.getElementById("slider").innerHTML = plik;
+    $("#slider").fadeIn(500);
+
+    
+    setTimeout("zmienslajd()", 5000);
+    setTimeout("schowaj()",4500);
+  }
+</script>
+
+
+
+</head>
+<body onload = "zmienslajd()">
+<!-- <body> -->
+<div id = "logowaniediv"><a href="login" id = "logowanie">Log in</a></div>
+<div id = "registerdiv"><a href="sign-up">Register</a></div>
+<a href="/" style="width: 300px;"><img src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt=""></a>
+<div class = "menu">
+    <a href="">Sklep </a>
+    <a href=""> Blog </a>
+    <a href=""> Newsletter</a>
+</div>
+<div class = "conteiner">
+  <div id="slider"></div>
+  <!-- <image src="{{ url_for('static', filename = 'foty/targ1.jpg') }}" alt="" id = "aemond">   -->
+  <h3>O nas</h3>
+  <p>ASDoinbsdainon inodasinoxasn nisodnioabsio onnajsbndj dbnobnads nio bdsaiobfadsiobdsaiob oasidbadsobibsaoidbodsai </p>
+  <h3>Lokalizacja</h3>
+  <p>ASDoinbsdainon inodasinoxasn nisodnioabsio onnajsbndj dbnobnads nio bdsaiobfadsiobdsaiob oasidbadsobibsaoidbodsai </p>
+  <h3>Przyszłość</h3>
+  <p>ASDoinbsdainon inodasinoxasn nisodnioabsio onnajsbndj dbnobnads nio bdsaiobfadsiobdsaiob oasidbadsobibsaoidbodsai </p>
+</div>
+<div class="image"> <img src="" alt="" ></div>
+<div></div>
+<footer id = "footer">Bartek Ruszkowski</footer>
+</body>
+</html>

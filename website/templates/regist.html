@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" type="text/css" href="{{ url_for('static', filename='foldercss/style.css') }}" />
+<script src = "{{ url_for('static', filename='first.js') }}"></script>
+</head>
+<body style="background-color: gray;">
+<div id = "logowaniediv"><a href="login">Log in</a></div>
+<div id = "registerdiv"><a href="sign-up">Register</a></div>
+<a href="{{ url_for('views.home') }}">    <image src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt=""></a>
+<div class = "menu">
+    <a href="">Sklep </a>
+    <a href=""> Blog </a>
+    <a href=""> Newsletter</a>
+</div>
+<div id="loginekran">
+    <image src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt="">
+    <h1 style="color: black; margin-top: 0px;">Register</h1>
+    <form name="dane_osobowe" action="from_check.js" >
+        <table>
+            <tr><td>Imię</td><td><input class="inpt" type="text" name="f_imie"></td> <td> <span class="err" id="e_imie" /></td></tr> 
+            <tr><td>Nazwisko</td><td><input class="inpt" type="text" name="f_nazwisko"></td> <td> <span class="err" id="e_nazwisko" /></td></tr> 
+
+            <!-- <tr>
+                <td>Płeć</td>
+                <td>
+                    <input name="f_plec" value="f_k" checked type="radio" onclick= 'showElement("NazwiskoPanienskie");'/>kobieta<br />
+                    <input name="f_plec" value="f_m" type="radio" onclick='hideElement("NazwiskoPanienskie");'/>mężczyzna
+                </td>
+            </tr> -->
+                <!-- <tr><td>N. panieńskie</td><td><span id="NazwiskoPanienskie"><input type="text" name="f_nazwisko_p"></span></td></tr> -->
+            <tr><td>E-mail</td><td><input class="inpt" type="text" name="f_email"></td><td> <span class="err" id="e_email" /></td></tr> 
+        
+            <tr><td>Kod pocztowy</td><td><input class="inpt" type="text" name="f_kod"></td> <td> <span class="err" id="e_kod" /></td></tr> 
+            
+            <tr><td>Ulica/Osiedle</td><td><input class="inpt" type="text" name="f_ulica"></td><td> <span class="err" id="e_ulica" /></td></tr> 
+            
+            <tr><td>Miasto</td><td><input class="inpt" type="text" name="f_miasto"></td> <td> <span class="err" id="e_miasto" /></td></tr>
+            <tr><td>Login</td><td><input class="inpt" type="text" name="f_login"></td> <td> <span class="err" id="e_login" /></td></tr> 
+            <tr><td>Hasło</td><td><input class="inpt" type="password" name="f_haslo" ></td> <td> <span class="err" id="e_haslo" /></td></tr> 
+            
+            <!-- <tr>
+                <td>Uwagi</td>
+                <td>
+                <textarea rows="5" cols="15" name="uwagi"
+                onkeyup="cnt(this.form.uwagi, document.getElementById('zostalo'), 150)">
+                </textarea>
+                </td>
+                </tr>
+                <tr>
+                <td>Pozostało <span id="zostalo">150</span> znaków</td>
+            </tr> -->
+                
+            <tr><td colspan="2"><input type="submit" value="Zarejstruj się" onclick = "return validate(this.form); validate(this.form);" id = "button"></td></tr>
+        </table>
+    </form>
+</div>
+
+<footer id = "footer">Bartek Ruszkowski</footer>
+</body>
+</html>
