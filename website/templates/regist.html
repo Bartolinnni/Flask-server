@@ -14,10 +14,35 @@
     <a href=""> Blog </a>
     <a href=""> Newsletter</a>
 </div>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert"></button>
+      <span aria-hidden="true">&times;</span>
+    </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+  {% for message in messages %}
+  {% if category == 'succes' %}
+
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+    </div>
+    {% endif %}
+    {% endfor %}
+{% endif %}
+{% endwith %}
 <div id="loginekran">
     <image src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt="">
     <h1 style="color: black; margin-top: 0px;">Register</h1>
-    <form name="dane_osobowe" action="from_check.js" >
+    <form name="dane_osobowe" action="" method="POST">
         <table>
             <tr><td>Imię</td><td><input class="inpt" type="text" name="f_imie"></td> <td> <span class="err" id="e_imie" /></td></tr> 
             <tr><td>Nazwisko</td><td><input class="inpt" type="text" name="f_nazwisko"></td> <td> <span class="err" id="e_nazwisko" /></td></tr> 
@@ -51,7 +76,9 @@
                 <tr>
                 <td>Pozostało <span id="zostalo">150</span> znaków</td>
             </tr> -->
-                
+            <!-- <tr><td colspan="2"><input type="submit" value="Zarejstruj się" id = "button"></td></tr> -->
+
+            <!-- <!-- onclick = "return validate(this.form); validate(this.form);"  -->
             <tr><td colspan="2"><input type="submit" value="Zarejstruj się" onclick = "return validate(this.form); validate(this.form);" id = "button"></td></tr>
         </table>
     </form>
