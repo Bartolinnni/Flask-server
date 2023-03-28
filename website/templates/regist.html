@@ -10,9 +10,13 @@
 <div id = "registerdiv"><a href="sign-up">Register</a></div>
 <a href="{{ url_for('views.home') }}">    <image src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt=""></a>
 <div class = "menu">
-    <a href="">Sklep </a>
-    <a href=""> Blog </a>
-    <a href=""> Newsletter</a>
+    {% if user.is_authenticated %}
+    <div ><a href="logout" id = "logowanie">Log out</a></div>
+    <div ><a href="user">Blog</a></div>
+    {% else %}
+    <div ><a href="login" id = "logowanie">Log in</a></div>
+    <div ><a href="sign-up">Register</a></div>
+    {% endif %}
 </div>
 
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -65,7 +69,7 @@
             <!-- <tr><td colspan="2"><input type="submit" value="Zarejstruj się" id = "button"></td></tr> -->
 
             <!-- <!-- onclick = "return validate(this.form); validate(this.form);"  -->
-            <tr><td colspan="2"><input type="submit" value="Zarejstruj się" onclick = "return validatereg(this.form); validatereg(this.form);" id = "button"></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Zarejstruj się" onclick = "return validatereg(this.form); validatereg(this.form);" class = "button"></td></tr>
         </table>
     </form>
 </div>

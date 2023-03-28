@@ -109,7 +109,7 @@ a:hover
 {
     width: 200px;
 }
-#button
+.button
 {
     margin-top: 15px;
     width: 200px;
@@ -119,9 +119,9 @@ a:hover
     color: black;
     background-color:gray;
 }
-#button::after
+.button:hover
 {
-    width: 110px;
+    font-weight: bold;
 }
 .inpt
 {

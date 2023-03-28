@@ -57,13 +57,22 @@
 </head>
 <body onload = "zmienslajd()">
 <!-- <body> -->
+{% if user.is_authenticated %}
+<div id = "logowaniediv"><a href="logout" id = "logowanie">Log out</a></div>
+<div id = "registerdiv"><a href="user">Blog</a></div>
+{% else %}
 <div id = "logowaniediv"><a href="login" id = "logowanie">Log in</a></div>
 <div id = "registerdiv"><a href="sign-up">Register</a></div>
+{% endif %}
 <a href="/" style="width: 300px;"><img src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt=""></a>
 <div class = "menu">
-    <a href="">Sklep </a>
-    <a href=""> Blog </a>
-    <a href=""> Newsletter</a>
+{% if user.is_authenticated %}
+<div ><a href="logout" id = "logowanie">Log out</a></div>
+<div ><a href="user">Blog</a></div>
+{% else %}
+<div ><a href="login" id = "logowanie">Log in</a></div>
+<div ><a href="sign-up">Register</a></div>
+{% endif %}
 </div>
 <div class = "conteiner">
   <div id="slider"></div>

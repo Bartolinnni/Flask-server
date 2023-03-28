@@ -29,6 +29,18 @@ function validatelog(formularz)
 
 }
 
+function validateblog(formularz)
+{
+    var name = formularz.elements["f_notename"]
+    var note = formularz.elements["f_note"]
+
+    var namemess = "Podaj nazwe posta!"
+
+    bol = checkNote(name, namemess, isWhiteSpaceOrEmpty) && checkNote(note, namemess, isWhiteSpaceOrEmpty);
+    return bol;
+
+}
+
 
 function isWhiteSpaceOrEmpty(str) {
     return /^[\s\t\r\n]*$/.test(str);       
@@ -45,6 +57,19 @@ function checkStringAndFocus(obj, msg, fun) {
     if (fun(str)) {
         document.getElementById(errorFieldName).innerHTML = msg;
         obj.focus();
+        return false;
+    }
+    else {
+        document.getElementById(errorFieldName).innerHTML = "";
+        return true;
+    }
+}
+
+function checkNote(obj, msg, fun) {
+    let str = obj.value;
+    let errorFieldName = "e_" + obj.name.substr(2, obj.name.length);
+    if (fun(str)) {
+        document.getElementById(errorFieldName).innerHTML = msg;
         return false;
     }
     else {

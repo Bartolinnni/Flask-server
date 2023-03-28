@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" type="text/css" href="{{ url_for('static', filename='foldercss/style.css') }}" />
+<script src = "{{ url_for('static', filename='first.js') }}"></script>
+</head>
+<body style="background-color: gray;">
+{% if user.is_authenticated %}
+<div id = "logowaniediv"><a href="logout" id = "logowanie">Log out</a></div>
+<div id = "registerdiv"><a href="user">Blog</a></div>
+{% else %}
+<div id = "logowaniediv"><a href="login" id = "logowanie">Log in</a></div>
+<div id = "registerdiv"><a href="sign-up">Register</a></div>
+{% endif %}
+<a href="{{ url_for('views.home') }}">    <image src="{{ url_for('static', filename='foty/owl.jpg') }}" id = "logo" alt=""></a>
+<div class = "menu">
+{% if user.is_authenticated %}
+<div ><a href="logout" id = "logowanie">Log out</a></div>
+<div ><a href="user">Blog</a></div>
+{% else %}
+<div ><a href="login" id = "logowanie">Log in</a></div>
+<div ><a href="sign-up">Register</a></div>
+{% endif %}
+</div>
+<h1 align="center">Notes</h1>
+<ul id="notes">
+    {% for note in user.notes%}
+    <li>Nazwa posta: {{ note.name}}</li>
+    <li style="border-bottom: solid 3px black;">Treść posta: <br> {{note.data}}</li>
+    {% endfor %}
+</ul>
+<form method = "POST" name="formnotename">
+    <b>Musisz podać nazwę posta!</b> <input class="inpt" type="text" name = "f_notename" style="width: 300px;" placeholder="Nazwa posta"><span class="err" id="e_notename" />
+    <input type="text" name = "f_note" style="width: 1356px; height: 500px;"><span class="err" id="e_note" />
+    <input type="submit" value="Dodaj post" class = "button">
+</form>
+<footer id = "footer">Bartek Ruszkowski</footer>
+</body>
+</html>
