@@ -4,8 +4,14 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
-    data = request.form
-    print(data)
+    if request.method == 'POST':
+        data = request.form
+        email = request.form.get('email')
+        firstName = request.form.get('firstName')
+        password1 = request.form.get('password1')
+        password2 = request.form.get('password2')
+        print(data)
+        flash('Konto zostało założone', category = 'success')
     return render_template("login.html")
 
 @auth.route('/logout')
@@ -15,9 +21,11 @@ def logout():
 @auth.route('/sign-up', methods=['GET', 'POST'])
 def sign_up():
     if request.method == 'POST':
+        data = request.form
         email = request.form.get('email')
         firstName = request.form.get('firstName')
         password1 = request.form.get('password1')
         password2 = request.form.get('password2')
+        print(data)
         flash('Konto zostało założone', category = 'success')
     return render_template("regist.html")
